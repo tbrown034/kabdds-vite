@@ -1,18 +1,31 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
+  line-height: 1.5;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  /* Color Themes */
+  color: rgba(70, 26, 26, 0.87);
+  --primary-color: #3c6478;
+  --secondary-color: #5b8a9f;
+  --tertiary-color: #cdd8de;
+  --quaternary-color: #cdd6e1;
+  background-color: rgba(237, 228, 228, 0.87);
+  --primary-bg-color: #f8fcfd;
+  --secondary-bg-color: #dfe7ec;
+  --tertiary-bg-color: #f5f8f9;
+  --quaternary-bg-color: #b3c7d3;
+  /* Font Themes  */
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --primary-font: "Lato", sans-serif;
+  --secondary-font: "Roboto Slab", serif;
+  --tertiary-font: "Montserrat", sans-serif;
 }
+
+/* Main Styles */ 
 
 a {
   font-weight: 500;
@@ -26,9 +39,7 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+
 }
 
 h1 {
@@ -43,27 +54,17 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: green;
+  color: wheat;
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  background-color: orange;
+ 
 }
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+ background-color: yellow;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
