@@ -8,10 +8,11 @@ import { Home, About, Services, Location, Financing, Faqs, Contact, Appointment 
 function App() {
   return (
     <div className="App">
+      <div className="hello-world">
       <h1>Hello World</h1> 
       <button>Click me</button>
-      <i className="fab fa-github-square"></i>
-
+      <i className="fa-sharp fa-solid fa-globe fa-8x"></i>
+      </div>
       <Home />
       <About />
       <Services />
