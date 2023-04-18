@@ -1,49 +1,53 @@
-import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import { Button, Icon } from "semantic-ui-react";
-import HeaderCallBtn from "../Buttons/HeaderCallBtn";
+// import logo from "../../assets/images/logo.jpeg"
+
 
 const Header = () => {
+  const NavItems = [
+    { path: "/about", label: "About Us" },
+    { path: "/financing", label: "Financing" },
+    { path: "/location", label: "Location" },
+    { path: "/contact", label: "Contact" },
+    { path: "/faqs", label: "FAQs" },
+  ];
+ 
   return (
     <div className="myHeader">
-      {/* Nav from React Bootstrap */}
-      <Navbar collapseOnSelect expand="md" bg="my-color" variant="light">
-        <Container>
-          <Link to="/" className="navbar-brand">
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Container>
+      <Navbar.Brand href="/">
             Keith Brown, D.D.S.
-          </Link>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="me-auto myNavLinks">
-              <Link className="nav-link" to="/about">About Us</Link>
-              <Link className="nav-link" to="/financing">Financing</Link>
-              <Link className="nav-link" to="/location">Location</Link>
-              <Link className="nav-link" to="/contact">Contact</Link>
-              <Link className="nav-link" to="/faqs">FAQs</Link>
-              <NavDropdown title="Services" id="collasible-nav-dropdown">
-                <Link className="dropdown-item" to="/services">General Dentistry</Link>
-                <Link className="dropdown-item" to="/services">Cosmetic Dentistry</Link>
-                <Link className="dropdown-item" to="/services">Surgical Dentistry</Link>
-              </NavDropdown>
-            </Nav>
-            {/* Buttons from Sematnic UI  */}
-            <Nav>
-              <Button as={Link} to="/appointment" className="myButton" animated id="apptBtn">
-                <Button.Content visible>
-                  <Icon name="calendar" /> Make an Appointment
-                </Button.Content>
-                <Button.Content hidden>
-                  <Icon name="arrow right" />
-                </Button.Content>
-              </Button>
-              <HeaderCallBtn />
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
+          </Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          
+          <Nav className="me-auto">
+            <Nav.Link href="/about">About</Nav.Link>
+            <Nav.Link href="/faqs">Faqs</Nav.Link>
+            <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
+              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">
+                Another action
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">
+                Separated link
+              </NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+          <Nav>
+            <Nav.Link href="#deets">More deets</Nav.Link>
+            <Nav.Link eventKey={2} href="#memes">
+              Dank memes
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
     </div>
   );
 };

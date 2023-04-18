@@ -1,29 +1,39 @@
 import "./App.css";
-import 'semantic-ui-css/semantic.min.css';
-import { Home, About, Services, Location, Financing, Faqs, Contact, Appointment  } from "./components/pages/"
+import "semantic-ui-css/semantic.min.css";
+import {
+  Home,
+  About,
+  Services,
+  Location,
+  Financing,
+  Faqs,
+  Contact,
+  Appointment,
+} from "./components/pages/";
+import Header from "./components/layout/Header";
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 
-
-
+const router = createBrowserRouter([
+  { path: "/", element: <Home /> },
+  { path: "/about", element: <About /> },
+  { path: "/services", element: <Services /> },
+  { path: "/location", element: <Location /> },
+  { path: "/financing", element: <Financing /> },
+  { path: "/faqs", element: <Faqs /> },
+  { path: "/contact", element: <Contact /> },
+  { path: "/appointment", element: <Appointment /> },
+]);
 
 function App() {
   return (
     <div className="App">
-      <div className="hello-world">
-      <h1>Hello World</h1> 
-      <button>Click me</button>
-      <i className="fa-sharp fa-solid fa-globe fa-8x"></i>
-      </div>
-      <Home />
-      <About />
-      <Services />
-      <Location />
-      <Financing />
-      <Faqs />
-      <Contact />
-      <Appointment />
-      <div>
-        <li></li>
-      </div>
+      <Header />
+    <RouterProvider router={router}>
+    
+    </RouterProvider>
     </div>
   );
 }
